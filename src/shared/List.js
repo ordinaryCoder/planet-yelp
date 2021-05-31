@@ -2,15 +2,15 @@ import styled from "@emotion/styled";
 
 export const List = styled.ul`
   padding: 0;
-  margin: 0 0 100px;
-  max-width: 600px;
+  margin: 0 0 50px;
+  max-width: 180px;
   display: flex;
   flex-direction: column;
 `;
 
 export const ListItem = styled.li`
   display: block;
-  padding: 3rem 5rem;
+  padding: 0.6rem 3rem;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-top-width: 0;
@@ -31,7 +31,7 @@ export const ListItemWithLink = styled.li`
   > a {
     display: block;
     background-color: #fff;
-    padding: 3rem 5rem;
+    padding: 1rem 3rem;
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-top-width: 0;
     &:hover {
