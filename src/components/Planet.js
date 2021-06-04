@@ -1,7 +1,8 @@
 import { gql, useSubscription } from "@apollo/client";
-import React from "react";
+import React, { useState } from "react";
 import { Badge } from "../shared/Badge";
 import { List, ListItem } from "../shared/List";
+import InputForm from "../shared/InputForm";
 
 const PLANET = gql`
   subscription Planet($id: uuid!) {
@@ -22,6 +23,7 @@ const Planet = ({
     params: { id },
   },
 }) => {
+  const [inputVal, setInputVal] = useState("");
   const { loading, error, data } = useSubscription(PLANET, {
     variables: { id },
   });
@@ -34,6 +36,14 @@ const Planet = ({
       <h3>
         {name} <Badge>{cuisine}</Badge>
       </h3>
+
+      <InputForm
+        inputVal={inputVal}
+        onChange={(e) => setInputVal(e.target.value)}
+        onSubmit={() => {}}
+        buttonText="Submit"
+      />
+
       <List>
         {reviews.map((review) => (
           <ListItem key={review.id}>{review.body}</ListItem>
