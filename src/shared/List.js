@@ -10,7 +10,7 @@ export const List = styled.ul`
 
 export const ListItem = styled.li`
   display: block;
-  padding: 0.6rem 3rem;
+  padding: 1rem 3rem;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-top-width: 0;

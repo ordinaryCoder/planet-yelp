@@ -2,6 +2,7 @@ import { gql, useQuery } from "@apollo/client";
 import React from "react";
 import { List, ListItem } from "../shared/List";
 import { Badge } from "../shared/Badge";
+import { Link } from "react-router-dom";
 
 const PLANETS = gql`
   {
@@ -20,7 +21,9 @@ const Planets = ({ newPlanets }) => {
   const renderPlanets = (planets) => {
     return planets.map(({ id, name, cuisine }) => (
       <ListItem key={id}>
-        {name} <Badge> {cuisine} </Badge>
+        <Link to={`/planet/${id}`}>
+          {name} <Badge> {cuisine} </Badge>
+        </Link>
       </ListItem>
     ));
   };
