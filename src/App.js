@@ -11,6 +11,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Planet from "./components/Planet";
 import { WebSocketLink } from "@apollo/link-ws";
 import { getMainDefinition } from "@apollo/client/utilities";
+import Status from "./components/Status";
 
 const httpLink = new HttpLink({
   uri: "https://planet-testapp.herokuapp.com/v1/graphql",
@@ -55,6 +56,7 @@ const App = () => {
         <Switch>
           <Route path="/planet/:id" component={Planet} />
           <Route path="/" component={PlanetSearch} />
+          <Route path="/status" component={Status} />
         </Switch>
       </ApolloProvider>
     </BrowserRouter>
